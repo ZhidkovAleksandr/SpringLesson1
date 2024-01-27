@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+<!--    <bean id = "whiteKnight" class ="Task2.entity.Knight"/>-->
+<!--    <bean id = "silverKnight" class ="Task2.entity.Knight"/>-->
+
+    <!--interfaces beans-->
+    <bean id="sword" class="Task2.entity.Sword"/>
+    <bean id="squad" class="Task2.entity.Squad"/>
+    <bean id="magicRope" class="Task2.entity.MagicRope"/>
+    <bean id="bow" class="Task2.entity.Bow"/>
+    <bean id="battleHorse" class="Task2.entity.BattleHorse"/>
+    <bean id="arsenal" class="Task2.entity.Arsenal"/>
+
+<!--    <bean id="whiteKnight" class="Task2.entity.Knight">-->
+<!--          <property name="save" ref="battleHorse"/>-->
+<!--    </bean>-->
+    <bean id = "whiteKnight" class ="Task2.entity.Knight">
+        <constructor-arg ref="sword"/>
+        <constructor-arg ref="arsenal"/>
+        <constructor-arg ref="battleHorse"/>
+    </bean>
+
+    <bean id = "silverKnight" class ="Task2.entity.Knight">
+        <constructor-arg ref="bow"/>
+        <constructor-arg ref="squad"/>
+        <constructor-arg ref="magicRope"/>
+    </bean>
+<!--    <bean id="silverKnight" class="Task2.entity.Knight">-->
+<!--        <property name="save" ref="magicRope"/>-->
+<!--    </bean>-->
+</beans>
